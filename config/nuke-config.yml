@@ -25,7 +25,7 @@ accounts:
       - "Administrators -> PowerUserAccess"
       - "agoel1 -> IAMUserChangePassword"
       IAMUserAccessKey:
-      - "agoel1 -> AKIAJPVD7FA7TBG4HTDQ"
+      - "agoel1 -> <access-key>"
       IAMPolicy:
       - "arn:aws:iam::<account-number>:policy/vpc-flow-logs"
       IAMInstanceProfileRole:
