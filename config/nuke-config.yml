@@ -1,0 +1,44 @@
+regions:
+- us-west-2
+- global
+
+account-blacklist:
+- "999999999999" # production
+
+accounts:
+  <account-number>:
+    filters:
+      IAMUser:
+      - "agoel1"
+      IAMRole:
+      - "GD-Security-Tenable-Read-Role"
+      IAMGroup:
+      - "Administrators"
+      IAMUserGroupAttachment:
+        - "agoel1 -> Administrators"
+      IAMInstanceProfile:
+      - "GD-AWS-Security-Tenable-EC2InstanceProfile"
+      IAMUserPolicyAttachment:
+      - "admin -> AdministratorAccess"
+      - "agoel1 -> Administrators"
+      - "Administrators -> IAMFullAccess"
+      - "Administrators -> PowerUserAccess"
+      - "agoel1 -> IAMUserChangePassword"
+      IAMUserAccessKey:
+      - "agoel1 -> AKIAJPVD7FA7TBG4HTDQ"
+      IAMPolicy:
+      - "arn:aws:iam::<account-number>:policy/vpc-flow-logs"
+      IAMInstanceProfileRole:
+      - "GD-AWS-Security-Tenable-EC2InstanceProfile -> GD-Security-Tenable-Read-Role"
+      IAMRolePolicyAttachment:
+      - "GD-Security-Tenable-Read-Role -> AmazonEC2ReadOnlyAccess"
+      - "basic_lambda_role -> vpc-flow-logs"
+      IAMGroupPolicyAttachment:
+      - "Administrators -> IAMFullAccess"
+      - "Administrators -> PowerUserAccess"
+      IAMLoginProfile:
+      - "agoel1"
+    
+
+
+
